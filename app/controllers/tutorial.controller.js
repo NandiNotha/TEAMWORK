@@ -3,7 +3,7 @@ const Tutorial = db.tutorials;
 
 // Create and Save a new Tutorial
 exports.create = (req, res) => {
-    // Validate request
+  // Validate request
   if (!req.body.title) {
     res.status(400).send({ message: "Content can not be empty!" });
     return;
@@ -28,6 +28,8 @@ exports.create = (req, res) => {
           err.message || "Some error occurred while creating the Tutorial."
       });
     });
+
+}
 
 // Retrieve all Tutorials from the database.
 exports.findAll = (req, res) => {
@@ -139,6 +141,4 @@ exports.findAllPublished = (req, res) => {
           err.message || "Some error occurred while retrieving tutorials."
       });
     });
-};
-  
-};
+}
